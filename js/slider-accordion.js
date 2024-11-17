@@ -37,6 +37,7 @@ $(document).ready(function () {
         }
       });
     }
+
   
     // Initialize max-height for the first active accordion (if any)
     const initialIndex = 0; // Set to the initial slide index

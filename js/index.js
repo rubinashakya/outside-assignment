@@ -1,9 +1,10 @@
 $(document).ready(function () {
-  $(".featured-product-carousel, .mealtime-product-carousel, .bathtime-product-carousel, .playtime-product-carousel").slick({
+  $(
+    ".featured-product-carousel, .mealtime-product-carousel, .bathtime-product-carousel, .playtime-product-carousel"
+  ).slick({
     infinite: false,
     arrows: true,
     slidesToScroll: 1,
-    centerPadding: "40px",
     variableWidth: true,
     prevArrow: `
         <button class="slick-prev">
@@ -28,11 +29,10 @@ $(document).ready(function () {
   });
 });
 
-const closeButton = document.querySelector(".close-btn");
+const announcementCloseButton = document.querySelector("#announcement-close");
 
-closeButton.addEventListener("click", () => {
+announcementCloseButton.addEventListener("click", () => {
   const announcementBar = document.querySelector(".announcement-bar");
-  announcementBar.style.display = "none";
   announcementBar.classList.add("hidden");
 });
 
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function runMenuScript() {
     const hamburgerBtn = document.getElementById("hamburger-menu");
-    const mainMenu = document.querySelector(".main-menu"); // Use querySelector to get the first .main-menu
+    const mainMenu = document.querySelector(".main-menu");
     const menuItems = document.querySelectorAll(".menu-list-item");
     const backBtns = document.querySelectorAll(".back-btn");
     const closeBtns = document.querySelectorAll(".h2 .close-btn");
@@ -92,13 +92,13 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
 
-    // Close button to close the entire menu
     closeBtns.forEach((btn) => {
       btn.addEventListener("click", () => {
-        closeMainMenu();
+        closeAllSubmenus();
+        openMainMenu();
       });
     });
-    console.log("hamburgerBtn", hamburgerBtn);
+
     // Toggle hamburger menu
     if (hamburgerBtn) {
       hamburgerBtn.addEventListener("click", () => {

@@ -417,6 +417,7 @@ p {
 .product-carousel .slick-slide img {
   aspect-ratio: 16/18;
   object-fit: scale-down;
+  width: 100%;
 }
 
 .featured-product-carousel .slick-slide > div,
@@ -455,7 +456,7 @@ p {
 
 .featured-product-item-title h3 {
   font-size: var(--font-size-sm);
-  line-height: 16px;
+  line-height: 20px;
   font-style: italic;
   font-weight: 300;
   letter-spacing: 0.3px;
@@ -602,6 +603,10 @@ p {
   min-height: 72px;
 }
 
+.playbox-gifts-product-item h3 {
+  margin-bottom: 3px;
+}
+
 .playbox-gifts-product-item .price {
   font-size: var(--font-size-sm);
   line-height: 21px;
@@ -609,6 +614,19 @@ p {
   letter-spacing: 0.3px;
   color: var(--link-text-color);
   font-style: italic;
+}
+
+.has-badge .dropdown-menu-list > li > a span {
+  display: inline;
+  margin-left: 16px;
+}
+
+.has-badge .dropdown-menu-list > li > a span svg {
+  transition: 0.3s all ease-in-out;
+}
+
+.has-badge .dropdown-menu-list > li > a:hover svg {
+  transform: rotate(-90deg);
 }
 
 /* Media Queries */
@@ -653,7 +671,6 @@ p {
   .row {
     flex-direction: row;
   }
-
 }
 
 @media screen and (min-width: 992px) {
@@ -868,7 +885,7 @@ p {
 
   .dropdown-menu-container {
     margin-left: 9%;
-    padding: 50px 40px 74px 0;
+    padding: 50px 0px 74px 0;
   }
 
   .main-menu .featured-product-section {
@@ -900,7 +917,7 @@ p {
   .slick-arrow {
     position: absolute;
     top: -32px;
-    right: 25px;
+    right: 55px;
   }
 
   .slick-prev {
@@ -909,7 +926,7 @@ p {
   }
 
   .slick-next {
-    right: 0;
+    right: 30px;
   }
 
   .slick-arrow svg {
@@ -977,7 +994,7 @@ p {
   }
 
   .playbox-gifts-product-section {
-    margin-left: 140px;
+    margin-left: 14%;
   }
 
   .playbox-gifts-product-item {
@@ -995,5 +1012,53 @@ p {
   .featured-product-carousel .slick-slide,
   .product-carousel .slick-slide .playbox-gifts-product-item {
     margin-right: 14px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  .playbox-content-wrapper {
+    flex-direction: column;
+  }
+
+  .playbox-gifts-product-section {
+    margin-left: 0;
+  }
+
+  .playbox-tab-panels ul {
+    max-width: none;
+  }
+
+  .playbox-tab-panels ul li {
+    flex: auto;
+    margin-right: 30px;
+  }
+
+  .playbox-tab-panels .icon-wrap {
+    width: 50px;
+    height: 50px;
+  }
+
+  .playbox-tab-wrapper {
+    margin-bottom: 25px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .has-badge .dropdown-menu-container .col-lg-4 {
+    width: 29%;
+  }
+
+  .playbox-gifts-product-section {
+    margin-left: 0;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .has-badge .dropdown-menu-container .col-lg-4 {
+    width: 30%;
+  }
+
+  .playbox-gifts-product-section {
+    margin-left: 14%;
   }
 }
